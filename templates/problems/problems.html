@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<center><h3>Please Enter complains</h3></center>
+<hr>
+<br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-success"> Submit Problem </button>
+    </form>
+ {% endblock %}
+
+
+
+ 

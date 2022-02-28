@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+<br><br><br>
+{% block content %}
+<head>
+
+</head>
+<center><h1>Report</h1></center>
+<!-- <form action="" method="POST">
+    {% csrf_token %}
+    {{form.media}}
+    <div class="">
+        <label for="{{ form.report_type.id_for_label }}">report_type:</label>
+        {{ form.report_type }}
+    </div>
+    <br>
+     <div class="">
+        <label for="{{ form.introduction.id_for_label }}">Introduction:</label>
+        {{form.media}}
+        {{ form.introduction }}
+    </div>
+    <br>
+    <div class="">
+        <label for="{{ form.achievement.id_for_label }}">achievement:</label>
+        {{form.media}}
+        {{ form.achievement}}
+    </div>
+    <div class="">
+        <label for="{{ form.challenge.id_for_label }}">challenge:</label>
+        {{form.media}}
+        {{ form.challenge}}
+    </div>
+    <div class="">
+        <label for="{{ form.conclusion.id_for_label }}">conclusion:</label>
+        {{form.media}}
+        {{ form.conclusion }}
+    </div>
+    <button class="btn btn-info" type="submit">submit</button> -->
+<!-- <br>
+
+</form> -->
+<form method="POST" class="was-validated">
+    {% csrf_token %}
+    <div class="col-md-3">
+        <label for="" class="form-label">Select Report Type</label>
+        <select class="form-select" name="report_type" required aria-label="select example">
+          <option value="">Open this select menu</option>
+          {% for i in report %}
+          <option value="{{i.id}}">{{i.title}}</option>
+          {%endfor%}
+        </select>
+       
+      </div>
+    <div class=" col-md-12">
+        <label for="floatingTextarea2">Introduction</label>
+        <div class="form-floating">
+            <textarea class="form-control is-invalid" id="introduction" name="introduction" placeholder="Required example textarea" required></textarea>
+        </div>
+    </div>
+    <div class=" col-md-12">
+        <label for="floatingTextarea2">Achievement</label>
+        <div class="form-floating">
+            <textarea class="form-control is-invalid" id="achievement" name="achievement" placeholder="Required example textarea" required></textarea>
+        </div>
+    </div>
+    <div class=" col-md-12">
+        <label for="floatingTextarea2">Challenge</label>
+        <div class="form-floating">
+            <textarea class="form-control is-invalid" id="challenge" name="challenge" placeholder="Required example textarea" required></textarea>
+        </div>
+    </div>
+    <div class=" col-md-12">
+        <label for="floatingTextarea2">Conclusion</label>
+        <div class="form-floating">
+            <textarea class="form-control is-invalid" id="conclusion" name="conclusion" placeholder="Required example textarea" required></textarea>
+        </div>
+    </div><br>
+    <div class="mb-3">
+        <button class="btn btn-info" type="submit">submit</button>
+      </div>
+    </div>
+ 
+    
+  </form>
+
+{% endblock %}

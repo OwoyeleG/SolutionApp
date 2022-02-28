@@ -1,0 +1,22 @@
+<body style="background-color: bisque;">
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<br><br>
+<hr>
+<center><h3>login</h3>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        <p>{{ field.label }}: <br> {{ field }}</p>
+    {% endfor %}
+    <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account? <a href="{% url 'register' %}">Signup here</a></p>
+</center>
+{% endblock %}
+</body>

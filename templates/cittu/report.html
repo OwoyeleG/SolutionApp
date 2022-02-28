@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<br><br><br>
+{% block content %}
+{% for reports in report %}
+    {{reports.report_type}}<br>
+    {{reports.date_from}}<br>
+    {{reports.date_to}}<br>
+    
+    {{reports.created_by}}<br>
+    {{reports.date_created}}<br>
+    <center><h4>introduction</h4></center>
+    {{reports.introduction}}<br>
+    <center><h4>achievement</h4></center>
+    {{reports.achievement}}<br>
+    <center><h4> challenge </h4></center>
+    {{reports.challenge}}<br>
+    <center><h4>conclusion</h4></center>
+    {{reports.conclusion}}<br>
+    <button class="btn btn-info"><a href="{% url 'update_report' reports.id %}">Update</a></button>
+    <button class="btn btn-info"><a href="">Delete</a></button>
+    <hr>
+{% endfor %}
+
+
+{% endblock %}

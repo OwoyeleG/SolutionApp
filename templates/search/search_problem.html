@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+    {% block content %}<br><br><br>
+     <body>      
+        {% if searched %}
+            <centre>
+                 <h1>You Searched for {{ searched }} </h1>
+            </centre>
+            <br>
+            <ul>
+        {% for problem in problems %}
+            <li> 
+                <a href="{% url 'solution' id=problem.id %}">{{ problem }}</a>
+            </li>
+        {% empty %}
+            <h2> No result found</h2>
+        {% endfor %}
+            </ul>
+            <br>
+        {% else %}
+            <h1>Type in a Search</h1>
+        {% endif %}
+    {% endblock %}
+    </body>
